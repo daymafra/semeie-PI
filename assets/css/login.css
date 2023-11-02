@@ -1,0 +1,324 @@
+
+body{
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 2rem 2rem 2rem;
+}
+/* .logo{
+    position: absolute;
+    left: 8.5625rem;
+    top: 2.6rem;
+} */
+.logo{
+    position: absolute;
+    left: 10%;
+    top: 10%;
+} 
+.main-content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+.sec-welcome{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    max-height: 90vh;
+    width: 100%;
+    min-width: 90vh;
+    padding: 9.5625rem 7.625rem 7.375rem 7.6875rem;
+    border-radius: 4rem;
+    background: var(--sec-orange);
+}
+.welcome-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+.welcome-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.3rem;
+}
+.welcome-text h3{
+    width: 25rem;
+    height: 5.6875rem;
+
+    color: var(--black);
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 2rem;
+}
+.welcome-text p{
+    width: 31.9375rem;
+    color: var(--gray-02);
+    font-family: Urbanist;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1rem;
+    letter-spacing: 0.0275rem;
+}
+.welcome-img img{
+    width: 23rem;
+    height: 23rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+}
+.form-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+.form-header h3{
+    width: 30rem;
+    height: 2.5625rem;
+
+    color: var(--black);
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 2.75rem;
+}
+.form-content{
+    display: flex;
+    padding: 2.5rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+.form-content-top, .form-content-bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+.form-inputs, .form-social-input{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.form-inputs .input{
+    display: flex;
+    width: 20.375rem;
+    height: 3rem;
+    padding: 0rem 1rem 0rem 0.875rem;
+    align-items: center;
+    border-radius: 0.25rem;
+    border: 1px solid #D0D0D0;
+    background: #ffff;
+}
+
+.form-inputs .input:hover, .form-social-input button:hover{
+    background-color: #f1f1f1;
+}
+.form-inputs .input::placeholder{
+    align-self: stretch;
+    color: #8A8A8A;
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 140%;
+    letter-spacing: 0.01094rem;
+}
+.line{
+    width: 6.25rem;
+    height: 0.25rem;
+}
+.form-inputs .btn{
+    display: flex;
+    align-items: flex-start;
+    align-self: stretch;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    gap: 0.125rem;
+    flex: 1 0 0;
+    border-radius: 0.5rem;
+    background: var(--green);
+    color: var(--white);
+    border: none;
+}
+.form-inputs a, .form-social-input a, 
+.input-check label, .check-type label{
+    color: #515151;
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 140%;
+    letter-spacing: 0.01094rem; 
+}
+.form-inputs a span, .form-social-input a span, 
+.input-check span{
+    color: var(--orange);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: 0.01094rem;
+    text-decoration: underline;
+}
+.form-social-input button{
+    display: flex;
+    width: 21.25rem;
+    height: 3rem;
+    padding: 0.75rem 1.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex: 1 0 0;
+
+    border-radius: 0.5rem;
+    border: 1px solid #D0D0D0;
+    background-color: #ffff;
+}
+.btn-social-text{
+    display: flex;
+    gap: 1rem;
+
+    color: #505050;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 140%; /* 1.225rem */
+    letter-spacing: 0.01094rem;
+}
+
+
+/* register.html */
+.input-check{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.input-check #terms, 
+.check-type #type-user-1,  
+.check-type #type-user-2{
+    display: flex;
+    width: 1rem;
+    height: 1rem;
+    align-items: center;
+    border-radius: 0.25rem;
+    border: 1px solid #D0D0D0;
+    background: #ffff;
+}
+
+.check-type{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 1rem;
+}
+
+.check-type label{
+    font-weight: 400;
+}
+
+.check-type-1, .check-type-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+/* responsivo */
+@media screen and (max-width: 991px){
+    body{
+        min-height: 100vh;
+        overflow-y: scroll;
+    }
+    .main-content{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+    }
+    .logo{
+        top: 5%;
+    }
+    .sec-welcome{
+        width: 100%;
+        padding: 5rem 7.625rem 1rem 7.6875rem;
+        background-color: transparent;
+    }
+    .welcome-info{
+        gap: 1rem;
+    }
+    .welcome-text h3{
+        color: var(--black);
+        font-size: 1.5rem;
+    }
+    .welcome-img img{
+        display: none;
+    }
+    .form-header{
+        display: none;
+    }
+    .form-content{
+        padding: 2rem;
+        gap: 1rem;
+    }
+    .form-content-top, .form-content-bottom{
+
+        gap: 1rem;
+    }
+    .form-inputs, .form-social-input{
+        gap: .75rem;
+    }
+}
+/* ipad */
+@media screen and (max-width: 836px) {
+
+}
+
+@media screen and (max-width: 768px){
+
+}
+
+@media screen and (max-width: 670px){
+
+}
+
+/* celular */
+@media screen and (max-width: 560px) {
+    body{
+        overflow-y: scroll;
+    }
+    .sec-welcome{
+        padding: 5rem 7.625rem 0 7.6875rem;
+        background-color: transparent;
+    }
+    .welcome-text p{
+        width: 20rem;
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+    }
+    .form-content{
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+}
+
+@media screen and (max-width: 414px) {
+    
+}
