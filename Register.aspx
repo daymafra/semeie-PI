@@ -48,18 +48,18 @@
                     <div class="form-content-top">
                         <div class="form-inputs">
 
-                            <asp:TextBox ID="txtNome" runat="server" placeholder="Nome" CssClass="form-control" ClientIDMode="Static" TextMode="Email" required=""></asp:TextBox>
+                            <asp:TextBox ID="txtNome" runat="server" placeholder="Nome" CssClass="form-control input" ClientIDMode="Static" TextMode="Email" required=""></asp:TextBox>
 
-                            <asp:TextBox ID="txtTelefone" runat="server" placeholder="Telefone" CssClass="form-control" ClientIDMode="Static" TextMode="Phone" required=""></asp:TextBox>
+                            <asp:TextBox ID="txtTelefone" runat="server" placeholder="Telefone" CssClass="form-control input" ClientIDMode="Static" TextMode="Phone" required=""></asp:TextBox>
 
 
-                            <asp:TextBox ID="txtCpf" runat="server" placeholder="CPF" CssClass="form-control" ClientIDMode="Static" TextMode="email" required=""></asp:TextBox>
+                            <asp:TextBox ID="txtCpf" runat="server" placeholder="CPF" CssClass="form-control input" ClientIDMode="Static" TextMode="email" required=""></asp:TextBox>
 
-                            <asp:TextBox ID="txtEmail" runat="server" placeholder="E-mail" CssClass="form-control" ClientIDMode="Static" TextMode="email" required=""></asp:TextBox>
+                            <asp:TextBox ID="txtEmail" runat="server" placeholder="E-mail" CssClass="form-control input" ClientIDMode="Static" TextMode="email" required=""></asp:TextBox>
 
-                            <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control" ClientIDMode="Static" TextMode="password" required=""></asp:TextBox>
+                            <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control input" ClientIDMode="Static" TextMode="password" required=""></asp:TextBox>
 
-                            <asp:TextBox ID="txtConfSenha" runat="server" placeholder="Confirmar senha" CssClass="form-control" ClientIDMode="Static" TextMode="password" required=""></asp:TextBox>
+                            <asp:TextBox ID="txtConfSenha" runat="server" placeholder="Confirmar senha" CssClass="form-control input" ClientIDMode="Static" TextMode="password" required=""></asp:TextBox>
 
                             <!-- type user -->
                             <div class="check-type">
