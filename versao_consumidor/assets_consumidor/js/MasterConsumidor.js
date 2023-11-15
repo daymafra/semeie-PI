@@ -32,9 +32,10 @@ cartCloseButton.addEventListener("click", function (event) {
     dropdown.classList.remove("show");
 });
 
-window.addEventListener("scroll", function () {
-    dropdown.classList.remove("show");
-});
+//window.addEventListener("scroll", function () {
+//    dropdown.classList.remove("show");
+//});
+
 
 // não deixa fechar se clicar dentro
 dropdown.addEventListener("click", function (event) {

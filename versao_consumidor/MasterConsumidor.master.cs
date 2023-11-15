@@ -9,6 +9,6 @@ public partial class versao_consumidor_MasterConsumidor : System.Web.UI.MasterPa
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        
     }
 }

@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/versao_consumidor/MasterConsumidor.master" AutoEventWireup="true" CodeFile="homeConsumidor.aspx.cs" Inherits="versao_consumidor_homeConsumidor" %>
+<%--chama o componente criado em outro arquivo--%>
+<%--<%@ Register TagPrefix="uc" TagName="ProductCard" Src="~/versao_consumidor/ProductCard.ascx" %>--%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -96,34 +98,43 @@
 
             <!-- cards carrosseul -->
             <div class="result-group-cards">
-                <%--testando card com repeater--%>
-                <asp:Repeater id="rptProductCard" runat="server">
-                    <ItemTemplate>
-                     <div class="result-card-item">
+                <%--testando card com repeater que vem do componente .ascx card 01--%>
+                <%--<asp:Repeater ID="rptProducts" runat="server">
+                 <ItemTemplate>
+                    <uc:ProductCard ID="ProductCard1" runat="server"
+                        ProductName='<%# Eval("ProductName") %>'
+                        ProductPrice='<%# Eval("ProductPrice") %>'
+                        ProductImageURL='<%# Eval("ProductImageURL") %>'
+                        ProductRating='<%# Eval("ProductRating") %>'
+                        ProductUnit='<%# Eval("ProductUnit") %>'/>
+                        
+                 </ItemTemplate>
+                </asp:Repeater>--%>
+
+                <%--testando repeater com escopo html - mais provavel que de certo, basta chamar do banco--%>
+                <asp:Repeater ID="rptProducts" runat="server">
+                 <ItemTemplate>
+                    <div class="result-card-item">
                     <!-- item img -->
                     <div class="result-item-img">
-                        <%-- tras a imagem --%>
-                        <img src='<%# Eval("ImageProd") %>' alt="">
+                        <img src="../assets/img/result imgs/repolho.png" alt="">
                     </div>
                     <!-- iten info -->
                     <div class="result-item-info">
                         <!-- nome + preço -->
                         <div class="result-item-info-top">
-                                                <%-- trás o nome --%>
                             <p id="item-name"><%# Eval("ProductName") %></p>
-                            <p id="item-price"><%# Eval("Price", "{0:C}") %></p>
+                            <p id="item-price"><%# Eval("ProductPrice") %></p>
                         </div>
                         <!-- avaliação + kg -->
                         <div class="result-item-info-bottom">
                             <div class="item-avaliacao">
-                                <img src="assets_consumidor/img/result imgs/Star.png" alt="">
-                                <%-- trás a avaliação --%>
-                                <span><%# Eval("Rating") %></span>
+                                <img src="../assets/img/result imgs/Star.png" alt="">
+                                <span><%# Eval("ProductRating") %></span>
                             </div>
-                            <img class="circle-divider" src="assets_consumidor/img/result imgs/circledivider.png" alt="">
+                            <img class="circle-divider" src="../assets/img/result imgs/circledivider.png" alt="">
                             <div class="item-un-venda">
-                                <%-- trás a unidade de venda --%>
-                                <span><%# Eval("Unit") %></span>
+                                <span><%# Eval("ProductUnit") %></span>
                             </div>
                         </div>
 
@@ -141,6 +152,7 @@
                                 </span>
                                 <button id="btnQtdMax">
                                     <i class="bx bx-plus"></i>
+                                    
                                 </button>
                             </div>
 
@@ -152,11 +164,10 @@
                         </div>
                     </div>
                 </div>
-
-
-                    </ItemTemplate>
+                 </ItemTemplate>
                 </asp:Repeater>
-                <!-- card item 01-->
+               
+                <!-- card item 01 - só html-->
                 <%--<div class="result-card-item">
                     <!-- item img -->
                     <div class="result-item-img">
@@ -208,158 +219,7 @@
                     </div>
                 </div>--%>
                 
-                <!-- card item 02 -->
-                <%--<div class="result-card-item">
-                    <!-- item img -->
-                    <div class="result-item-img">
-                        <img src="../assets/img/result imgs/item02.png" alt="">
-                    </div>
-                    <!-- item info -->
-                    <div class="result-item-info">
-                        <!-- nome + preco -->
-                        <div class="result-item-info-top">
-                            <p id="item-name">Repolho fatiado </p>
-                            <p id="item-price">R$ 8,55</p>
-                        </div>
-                        <!-- avaliação + un -->
-                        <div class="result-item-info-bottom">
-                            <div class="item-avaliacao">
-                                <img src="../assets/img/result imgs/Star.png" alt="">
-                                <span>4.0</span>
-                            </div>
-                            <img class="circle-divider" src="../assets/img/result imgs/circledivider.png" alt="">
-                            <div class="item-un-venda">
-                                <span>Kg</span>
-                            </div>
-                        </div>
-                        <!-- qtd + btn card -->
-                        <div class="result-item-info-qtdCart">
-                            <!-- qtd -->
-                            <div class="result-item-qtdBtn">
-                                <button id="btnQtdMin">
-                                    <!-- <img src="../assets/img/icons/qtnMin.png" alt=""> -->
-                                    <i class="bx bx-minus"></i>
-                                </button>
-
-                                <span class="numQtd">
-                                    1
-                                </span>
-                                <button id="btnQtdMax">
-                                    <i class="bx bx-plus"></i>
-                                    
-                                </button>
-                            </div>
-
-                            <!-- btn cart -->
-                            <button class="result-item-btnCart">
-                                <!-- <img src="../assets/img/icons/bag icon.png" alt=""> -->
-                                <i class="bx bx-shopping-bag"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>--%>
-
-                <!-- card item 03 -->
-                <%--<div class="result-card-item">
-                    <!-- item img -->
-                    <div class="result-item-img">
-                        <img src="../assets/img/result imgs/item03.png" alt="">
-                    </div>
-                    <!-- item info -->
-                    <div class="result-item-info">
-                        <!-- nome + preco -->
-                        <div class="result-item-info-top">
-                            <p id="item-name">Repolho roxo </p>
-                            <p id="item-price">R$ 3,50</p>
-                        </div>
-                        <!-- avaliação + un -->
-                        <div class="result-item-info-bottom">
-                            <div class="item-avaliacao">
-                                <img src="../assets/img/result imgs/Star.png" alt="">
-                                <span>4.4</span>
-                            </div>
-                            <img class="circle-divider" src="../assets/img/result imgs/circledivider.png" alt="">
-                            <div class="item-un-venda">
-                                <span>Kg</span>
-                            </div>
-                        </div>
-                        <!-- qtd + btn card -->
-                        <div class="result-item-info-qtdCart">
-                            <!-- qtd -->
-                            <div class="result-item-qtdBtn">
-                                <button id="btnQtdMin">
-                                    <!-- <img src="../assets/img/icons/qtnMin.png" alt=""> -->
-                                    <i class="bx bx-minus"></i>
-                                </button>
-
-                                <span class="numQtd">
-                                    1
-                                </span>
-                                <button id="btnQtdMax">
-                                    <i class="bx bx-plus"></i>
-                                    
-                                </button>
-                            </div>
-
-                            <!-- btn cart -->
-                            <button class="result-item-btnCart">
-                                <!-- <img src="../assets/img/icons/bag icon.png" alt=""> -->
-                                <i class="bx bx-shopping-bag"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>--%>
-
-                <!-- card item 04 -->
-                <%--<div class="result-card-item">
-                    <!-- item img -->
-                    <div class="result-item-img">
-                        <img src="../assets/img/result imgs/item04.png" alt="">
-                    </div>
-                    <!-- item info -->
-                    <div class="result-item-info">
-                        <!-- nome + preco -->
-                        <div class="result-item-info-top">
-                            <p id="item-name">Mini repolho </p>
-                            <p id="item-price">R$ 1,56</p>
-                        </div>
-                        <!-- avaliação + un -->
-                        <div class="result-item-info-bottom">
-                            <div class="item-avaliacao">
-                                <img src="../assets/img/result imgs/Star.png" alt="">
-                                <span>3.9</span>
-                            </div>
-                            <img class="circle-divider" src="../assets/img/result imgs/circledivider.png" alt="">
-                            <div class="item-un-venda">
-                                <span>Kg</span>
-                            </div>
-                        </div>
-                        <!-- qtd + btn card -->
-                        <div class="result-item-info-qtdCart">
-                            <!-- qtd -->
-                            <div class="result-item-qtdBtn">
-                                <button id="btnQtdMin">
-                                    <!-- <img src="../assets/img/icons/qtnMin.png" alt=""> -->
-                                    <i class="bx bx-minus"></i>
-                                </button>
-
-                                <span class="numQtd">
-                                    1
-                                </span>
-                                <button id="btnQtdMax">
-                                    <i class="bx bx-plus"></i>
-                                    
-                                </button>
-                            </div>
-
-                            <!-- btn cart -->
-                            <button class="result-item-btnCart">
-                                <!-- <img src="../assets/img/icons/bag icon.png" alt=""> -->
-                                <i class="bx bx-shopping-bag"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>--%>
+                
 
             </div>
         </section>

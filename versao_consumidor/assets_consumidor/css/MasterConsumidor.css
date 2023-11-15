@@ -236,7 +236,7 @@ nav .search-box {
     align-self: stretch;
     color: var(--black);
     font-family: Lexend;
-    font-size: 18px;
+    font-size: 10px !important;
     font-weight: 500;
 }
 
@@ -248,13 +248,13 @@ nav .search-box {
     flex: 1 0 0;
 }
 
-    .cart-header-text p {
-        align-self: stretch;
-        color: var(--gray-text, rgba(22, 22, 33, 0.50));
-        font-family: Urbanist;
-        font-size: 15px;
-        font-weight: 500;
-    }
+.cart-header-text p {
+     align-self: stretch;
+     color: var(--gray-text, rgba(22, 22, 33, 0.50));
+     font-family: Urbanist;
+     font-size: 15px;
+     font-weight: 500;
+}
 /* fechar */
 #cartClose {
     border: none;
@@ -483,6 +483,7 @@ nav .search-box {
     flex-direction: column;
     align-items: stretch;
     gap: 12px;
+    margin-top: 30px;
 }
 
 .order-info {
