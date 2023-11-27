@@ -12,7 +12,7 @@ public partial class Login : System.Web.UI.Page
         msgErro.Visible = false;
     }
 
-    protected void btnEntrar_Click(object sender, EventArgs e)
+    protected void BtnEntrar_Click(object sender, EventArgs e)
     {
         //Verifica se o email e senha são vazios 
         if (string.IsNullOrEmpty(txtEmail.Text) && string.IsNullOrEmpty(txtSenha.Text))

@@ -74,7 +74,7 @@
                             </div>
 
                             <span class="line"></span>
-                            <asp:LinkButton type="submit" class="btn" ID="btnCadastro" runat="server" AutoPostBack="true" OnClick="btnCadastro_Click">Cadastrar</asp:LinkButton>
+                            <asp:LinkButton type="submit" class="btn" ID="btnCadastro" runat="server" AutoPostBack="true" OnClick="BtnCadastro_Click">Cadastrar</asp:LinkButton>
                         </div>
                     </div>
 

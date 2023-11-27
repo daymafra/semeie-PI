@@ -44,7 +44,7 @@
                             <asp:TextBox ID="txtEmail" runat="server" placeholder="E-mail" CssClass="form-control input" ClientIDMode="Static" TextMode="email" required=""></asp:TextBox>
                             <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control input" ClientIDMode="Static" TextMode="password" required=""></asp:TextBox>
                             <span class="line"></span>
-                            <asp:LinkButton type="submit" class="btn" ID="btnEntrar" runat="server" OnClick="btnEntrar_Click">Entrar</asp:LinkButton>
+                            <asp:LinkButton type="submit" class="btn" ID="btnEntrar" runat="server" OnClick="BtnEntrar_Click">Entrar</asp:LinkButton>
                             <span class="line"></span>
                             <a href="#">Esqueceu a senha? <span>Clique aqui</span></a>
                         </div>

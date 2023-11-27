@@ -221,6 +221,7 @@
                         <li><a href="#">
                             <i class="nav-icon bx bx-user-circle"></i>
                         </a></li>
+                        <asp:HyperLink ID="loginEmail" runat="server" href="#"></asp:HyperLink>
                     </ul>
                 </div>
             </nav>
