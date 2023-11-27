@@ -24,7 +24,7 @@
                         <p>Entre com seus dados para acessar sua conta</p>
                     </div>
                     <div class="welcome-img">
-                        <img src="assets/img/fruit shop-amico 1.png" alt="">
+                        <img src="assets/img/fruit_shop_amico_1.png" alt="">
                     </div>
                 </div>
             </div>
@@ -41,10 +41,10 @@
                 <div class="form-content">
                     <div class="form-content-top">
                         <div class="form-inputs">
-                            <asp:TextBox ID="txtEmail" runat="server" placeholder="E-mail" CssClass="form-control" ClientIDMode="Static" TextMode="email" required=""></asp:TextBox>
-                            <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control" ClientIDMode="Static" TextMode="password" required=""></asp:TextBox>
+                            <asp:TextBox ID="txtEmail" runat="server" placeholder="E-mail" CssClass="form-control input" ClientIDMode="Static" TextMode="email" required=""></asp:TextBox>
+                            <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control input" ClientIDMode="Static" TextMode="password" required=""></asp:TextBox>
                             <span class="line"></span>
-                            <asp:LinkButton type="submit" class="btn" ID="btnEntrar" runat="server" OnClick="btnEntrar_Click">Entrar</asp:LinkButton>
+                            <asp:LinkButton type="submit" class="btn" ID="btnEntrar" runat="server" OnClick="BtnEntrar_Click">Entrar</asp:LinkButton>
                             <span class="line"></span>
                             <a href="#">Esqueceu a senha? <span>Clique aqui</span></a>
                         </div>
@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="form-divider">
-                    <img src="assets/img/Group 198.png" alt="">
+                    <img src="assets/img/Group_198.png" alt="">
                 </div>
 
 

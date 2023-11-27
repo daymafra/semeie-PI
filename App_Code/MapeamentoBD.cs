@@ -9,8 +9,10 @@ public class MapeamentoBD
     // 1 metodo: conexão com o bd;
     public static IDbConnection Conexao()
     {
+#pragma warning disable IDE0090 // Type or member is obsolete
         MySqlConnection conexaoMySQL = new MySqlConnection(ConfigurationManager.AppSettings["stringConexaoBD"]);
         conexaoMySQL.Open();  // abre a conexão com o banco
+#pragma warning restore IDE0090 // Type or member is obsolete
 
         return conexaoMySQL;
     }
