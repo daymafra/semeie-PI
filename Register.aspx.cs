@@ -150,7 +150,7 @@ public partial class Register : System.Web.UI.Page
     {
         string tpUsuario = userType.Value; // Obtém o valor do HiddenField 
         // Determina a página inicial com base no tipo de usuário
-        string paginaInicial = (tpUsuario == "Consumidor") ? "HomeConsumidor.aspx" : "HomeProdutor.aspx";
+        string paginaInicial = (tpUsuario == "Consumidor") ? "HomeConsumidor.aspx?id=" + Funcoes.BaseCodifica(tpUsuario) : "HomeProdutor.aspx";
         Response.Write("<script>alert('Cadastro Realizado Com Sucesso!');</script>");
         // Adiciona um script para redirecionar imediatamente para a página inicial após o alerta
         Response.Write($"<script>setTimeout(function(){{ window.location.href = '{paginaInicial}'; }}, 0);</script>");

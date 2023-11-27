@@ -22,6 +22,8 @@ public partial class Login : System.Web.UI.Page
             msgErro.Text = "<span style='color: red;'>Email e Senha não podem ser nulos!</span>";
             //aqui eu torno visible a mensagem
             msgErro.Visible = true;
+            txtEmail.BorderColor = Color.Red;
+            txtSenha.BorderColor = Color.Red;
         }
 
         //Verifica se a senha estiver vazia
@@ -32,6 +34,7 @@ public partial class Login : System.Web.UI.Page
             msgErro.Text = "<span style='color: red;'>Por favor, informe sua senha!</span>";
             //aqui eu torno visible a mensagem
             msgErro.Visible = true;
+            txtSenha.BorderColor = Color.Red;
         }
 
         // Verifico se o email estiver vazio
@@ -41,6 +44,7 @@ public partial class Login : System.Web.UI.Page
             msgErro.Text = "<span style='color: red;'>Por favor, informe seu email!</span>";
             // aqui eu torno visivel a mensagem
             msgErro.Visible = true;
+            txtEmail.BorderColor = Color.Red;
         }
         else
         {
@@ -79,7 +83,7 @@ public partial class Login : System.Web.UI.Page
 
             }
 
-            //Se o meu objeto empresa for diferente de null, ou seja, se houverem resultados da minha consulta, minha Session recebe o objeto empresa e redireciona o usuário para o Perfil da Empresa
+            //Se o meu objeto usuario for diferente de null, ou seja, se houverem resultados da minha consulta, minha Session recebe o objeto usuario e redireciona o usuário para o Perfil adequado
             // Isso acontece quando há resultados na consulta, ou seja, existe um usuário com email e senha, então o login é bem sucedido
             if (usuario != null)
             {
@@ -89,15 +93,25 @@ public partial class Login : System.Web.UI.Page
                 con.Close();
                 // Converte o ID do usuário para uma string
                 string id = Convert.ToString(usuario.UsuarioId);
-                // Exibe um alerta com a mensagem "Bem-vindo!"
-                Response.Write("<script>alert('Bem-vindo!');</script>");
+
+                // Verifica o tipo de usuário e redireciona para a página correspondente
+                if (usuario.TipoUsuario == TipoUsuario.Consumidor)
+                {
+                    // Redireciona para a página do consumidor
+                    Response.Redirect("HomeConsumidor.aspx?id=" + Funcoes.BaseCodifica(id));
+                }
+                else if (usuario.TipoUsuario == TipoUsuario.Vendedor)
+                {
+                    // Redireciona para a página do vendedor
+                    Response.Redirect("HomeProdutor.aspx");
+                }
             }
 
-            //Se o meu objeto empresa for igual a null, ou seja, se não houverem resultados da minha consulta, minha Session continua null e mensagens de erro aparecem na tela,
+            //Se o meu objeto usuario for igual a null, ou seja, se não houverem resultados da minha consulta, minha Session continua null e mensagens de erro aparecem na tela,
             //sendo os campos senha e email limpos
             else
             {
-                msgErro.Text = "<span style='color: red;'>Email e senha não conferem em nosso cadastro</span>";
+                msgErro.Text = "<span style='color: red;'>Falha ao tentar logar! Verifique se o email ou senha estão corretos e tente novamente!</span>";
                 msgErro.Visible = true;
                 txtEmail.BorderColor = Color.Red;
                 txtSenha.Text = null;
