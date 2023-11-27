@@ -1,0 +1,242 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterConsumidor.master.cs" Inherits="MasterConsumidor" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <%-- links --%>
+    <link href="assets/css/masterConsumidor.css" rel="stylesheet" />
+    <link href="assets/css/homeConsumidor.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <div>
+        <%-- nav --%>
+        <form id="form1" runat="server">
+            <nav class="nav">
+                <div class="left-links">
+                    <i id="btn-menu" class="bx bx-menu"></i>
+                    <a href="#" class="logo">Semeie.</a>
+
+                    <ul class="navbar">
+                        <li><a href="#">Início</a></li>
+                        <li><a href="#">Categorias</a></li>
+                        <li><a href="#">Ofertas</a></li>
+                        <li><a href="#">Bancas</a></li>
+                    </ul>
+                </div>
+
+                <div class="right-links">
+                    <ul class="nav-links">
+
+                        <li><a href="#">
+                            <div class="search-box">
+                                <i id="search-icon" class="nav-icon" data-feather="search"></i>
+                                <input type="text" name="Search" id="search" placeholder="Procurar produto..">
+                            </div>
+                        </a></li>
+
+                        <!-- cart icon -->
+                        <li><a href="#" class="cart-icon dropdown" onclick="myDropdown()">
+                            <span class="qtd-itens">3</span>
+                            <i class="nav-icon" data-feather="shopping-bag"></i>
+                            <!-- dropdown - cart content -->
+                            <div class="cart-dropdown" id="myDropdown">
+                                <div id="cart-content" class="cart-content-dropdown">
+                                    <!-- itens do pedido -->
+                                    <div class="cart-order-top">
+                                        <!-- cart header -->
+                                        <div class="cart-header">
+                                            <div class="cart-header-text">
+                                                <h3>Meu carinho</h3>
+                                                <p>Os produtos são separados por vendedor</p>
+                                            </div>
+
+                                            <asp:LinkButton CssClass="cartClose" ID="cartCloseButton" runat="server" OnClick="CartCloseButton_Click">
+                                            <i class='bx bx-x-circle'></i>
+                                            </asp:LinkButton>
+                                        </div>
+
+                                        <!-- cart order-->
+                                        <div class="cart-order">
+                                            <!-- info vendedor -->
+                                            <div class="order-seller-info">
+                                                <div class="seller-info">
+                                                    <h3 id="nomeBanca">Nome da Banca</h3>
+                                                    <div class="seller-detais-info">
+                                                        <p id="distanc">23 Km</p>
+                                                        <img src="assets/img_consumidor/result_imgs/circledivider.png" alt="" class="circle-divider">
+                                                        <p id="freteValor">Frete grátis</p>
+                                                    </div>
+                                                </div>
+                                                <!-- btn chat -->
+                                                <asp:LinkButton CssClass="sellerChat" ID="sellerChatButton" runat="server" OnClick="SellerChatButton_Click">
+                                                    <i class='bx bxs-message-square-dots'></i>
+                                                </asp:LinkButton>
+                                            </div>
+
+                                            <!-- order itens -->
+                                            <div class="order-itens-content">
+                                                <!-- item order 01 -->
+                                                <div class="order-item" id="orderItem">
+                                                    <!-- nome + excluir -->
+                                                    <div class="order-item-top">
+                                                        <p cssclass="itemName">Kiwi</p>
+                                                        <asp:LinkButton CssClass="btnDelItem" ID="btnDelItemButton" runat="server">
+                                                            <i class='bx bxs-trash'></i>
+                                                        </asp:LinkButton>
+                                                    </div>
+                                                    <!-- detais + total -->
+                                                    <div class="order-item-bottom">
+                                                        <div class="order-item-detail">
+                                                            <!-- qtd -->
+                                                            <div class="order-item-qtdBtn">
+                                                                <asp:LinkButton CssClass="btnQtdMin" ID="btnQtdMinButton" runat="server">
+                                                                    <i class="bx bx-minus"></i>
+                                                                </asp:LinkButton>
+
+                                                                <span class="numQtd">2
+                                                                </span>
+                                                                <asp:LinkButton CssClass="btnQtdMax" ID="btnQtdMaxButton" runat="server">
+                                                                    <i class="bx bx-plus"></i>
+                                                                </asp:LinkButton>
+                                                            </div>
+                                                            <!-- un -->
+                                                            <img class="circle-divider" src="assets/img_consumidor/result_imgs/circledivider.png" alt="">
+                                                            <div class="item-un-venda">
+                                                                <span>Kg</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <span cssclass="itemTotal">R$ 19,20</span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- item order 02 -->
+                                                <div class="order-item">
+                                                    <!-- nome + excluir -->
+                                                    <div class="order-item-top">
+                                                        <p id="itemName">Maçã</p>
+                                                        <asp:LinkButton CssClass="btnDelItem" ID="btnDelItemButton1" runat="server">
+                                                            <i class='bx bxs-trash'></i>
+                                                        </asp:LinkButton>
+                                                    </div>
+                                                    <!-- detais + total -->
+                                                    <div class="order-item-bottom">
+                                                        <div class="order-item-detail">
+                                                            <!-- qtd -->
+                                                            <div class="order-item-qtdBtn">
+                                                                <asp:LinkButton CssClass="btnQtdMin" ID="btnQtdMinButton1" runat="server">
+                                                                    <i class="bx bx-minus"></i>
+                                                                </asp:LinkButton>
+
+                                                                <span class="numQtd">1
+                                                                </span>
+                                                                <asp:LinkButton CssClass="btnQtdMax" ID="btnQtdMxButton1" runat="server">
+                                                                    <i class="bx bx-plus"></i>
+                                                                </asp:LinkButton>
+                                                            </div>
+                                                            <!-- un -->
+                                                            <img class="circle-divider" src="assets/img_consumidor/result_imgs/circledivider.png" alt="">
+                                                            <div class="item-un-venda">
+                                                                <span>Kg</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <span id="itemTotal">R$ 6,56</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- order total -->
+                                            <div class="order-total-price">
+                                                <p>Total</p>
+                                                <span id="valorTotal">R$23,61
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- card end order -->
+                                    <div class="cart-end-order">
+                                        <!-- header -->
+                                        <div class="cart-header">
+                                            <div class="cart-header-text">
+                                                <h3 class="header-sec">Finalizar pedido</h3>
+                                                <p>Adicione as informações sobre o pedido</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- info do pedido -->
+                                        <div class="order-end-info">
+                                            <!-- info desc -->
+                                            <div class="order-info">
+                                                <label for="orderDesc" class="order-info-label">Descrição do pedido</label>
+                                                <asp:TextBox ID="orderDesc" runat="server" placeholder="Ex: Fruta verdolenga, grande, etc" ClientIDMode="Static"
+                                                    TextMode="MultiLine" required="" CssClass="order-input">
+                                                </asp:TextBox>
+                                            </div>
+
+                                            <!-- info pagamento -->
+                                            <div class="order-info">
+                                                <label for="orderPagamento" class="order-info-label">Pagamento</label>
+                                                <asp:TextBox ID="orderPagamento" runat="server" placeholder="Selecione um meio de pagamento" ClientIDMode="Static"
+                                                    TextMode="Email" required="" CssClass="order-input">
+                                                </asp:TextBox>
+                                                <%--<asp:ListBox ID="orderOpcoesPag" runat="server">
+                                     </asp:ListBox>--%>
+                                            </div>
+
+                                            <!-- info entrega -->
+                                            <div class="order-info">
+                                                <label for="orderEntrega" class="order-info-label">Entrega</label>
+                                                <%--verificar se o produtor faz ou não entrega--%>
+                                                <asp:TextBox ID="orderEntrega" runat="server" placeholder="Selecione um meio de entrega" ClientIDMode="Static"
+                                                    TextMode="Email" required="" CssClass="order-input">
+                                                </asp:TextBox>
+                                                <%--<asp:ListBox ID="orderOpcoesEntrega" runat="server">
+                                     </asp:ListBox>--%>
+                                            </div>
+                                        </div>
+                                        <!-- btn send order -->
+                                        <asp:LinkButton type="submit" ID="btnSendOrder" runat="server">Enviar pedido</asp:LinkButton>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </a>
+                        </li>
+
+                        <!-- user icon -->
+                        <li><a href="#">
+                            <i class="nav-icon bx bx-user-circle"></i>
+                        </a></li>
+                    </ul>
+                </div>
+            </nav>
+        </form>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+
+    <!-- js -->
+    <script src="assets/js/MasterConsumidor.js"></script>
+    <script src="assets/js/homeConsumidor.js"></script>
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

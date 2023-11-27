@@ -38,9 +38,11 @@ public class Funcoes
     /// <returns>Texto em base64 codificado</returns>
     public static string BaseCodifica(string textoLimpo)
     {
+#pragma warning disable IDE0059 // Type or member is obsolete
         byte[] vetorBase = new byte[textoLimpo.Length];
         vetorBase = Encoding.UTF8.GetBytes(textoLimpo);
         return Convert.ToBase64String(vetorBase);
+#pragma warning restore IDE0059 // Type or member is obsolete
     }
 
     /// <summary>
@@ -70,8 +72,10 @@ public class Funcoes
         utf8Decode.GetChars(stringValor, 0, stringValor.Length, decodeChar, 0);
 
         //converto o vetor em um único texto
+#pragma warning disable IDE0090 // Type or member is obsolete
         String resultado = new String(decodeChar);
         return resultado;
+#pragma warning restore IDE0090 // Type or member is obsolete
     }
 
     public static int QuantidadeRegistros(DataSet ds)

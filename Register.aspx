@@ -48,17 +48,17 @@
                     <div class="form-content-top">
                         <div class="form-inputs">
 
-                            <asp:TextBox ID="txtNome" runat="server" placeholder="Nome" CssClass="form-control" ClientIDMode="Static" required=""></asp:TextBox>
+                            <asp:TextBox ID="txtNome" runat="server" placeholder="Nome" CssClass="form-control input" ClientIDMode="Static" required=""></asp:TextBox>
 
-                            <asp:TextBox ID="txtTelefone" runat="server" placeholder="Telefone" CssClass="form-control" ClientIDMode="Static" TextMode="Phone" required=""></asp:TextBox>
+                            <asp:TextBox ID="txtTelefone" runat="server" placeholder="Telefone" CssClass="form-control input" ClientIDMode="Static" TextMode="Phone" required=""></asp:TextBox>
 
-                            <asp:TextBox ID="txtCpf" runat="server" placeholder="CPF" CssClass="form-control" ClientIDMode="Static" required=""></asp:TextBox>
+                            <asp:TextBox ID="txtCpf" runat="server" placeholder="CPF" CssClass="form-control input" ClientIDMode="Static" required=""></asp:TextBox>
 
-                            <asp:TextBox ID="txtEmail" runat="server" placeholder="E-mail" CssClass="form-control" ClientIDMode="Static" TextMode="Email" required=""></asp:TextBox>
+                            <asp:TextBox ID="txtEmail" runat="server" placeholder="E-mail" CssClass="form-control input" ClientIDMode="Static" TextMode="Email" required=""></asp:TextBox>
 
-                            <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control" ClientIDMode="Static" TextMode="password" required=""></asp:TextBox>
+                            <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="form-control input" ClientIDMode="Static" TextMode="password" required=""></asp:TextBox>
 
-                            <asp:TextBox ID="txtConfSenha" runat="server" placeholder="Confirmar senha" CssClass="form-control" ClientIDMode="Static" TextMode="password" required=""></asp:TextBox>
+                            <asp:TextBox ID="txtConfSenha" runat="server" placeholder="Confirmar senha" CssClass="form-control input" ClientIDMode="Static" TextMode="password" required=""></asp:TextBox>
 
                             <!-- type user -->
                             <div class="check-type">
@@ -101,11 +101,15 @@
                             <a href="Login.aspx">Já tem uma conta? <span>Entre</span></a>
                         </div>
                     </div>
+                </div>
             </form>
         </div>
     </main>
 
     <!-- js -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
     <script>
         const checkCon = document.getElementById('<%= checkCon.ClientID %>');
         const checkVen = document.getElementById('<%= checkVen.ClientID %>');
@@ -125,6 +129,35 @@
             }
         });
     </script>
+
+    <script>
+        $(document).ready(function () {
+            // Aplica a máscara ao campo de telefone
+            $('#txtTelefone').mask('(00) 0 0000 0000');
+            // Aplica a máscara ao campo de cpf
+            $('#txtCpf').mask('000.000.000-00');
+
+            // Adiciona um evento de validação antes de prosseguir com o cadastro
+            $('#btnCadastro').on('click', function () {
+                var telefone = $('#txtTelefone').cleanVal(); // Obtém apenas os números
+                var cpf = $('#txtCpf').cleanVal(); // Obtém apenas os números
+
+                // Verifica se o número de telefone tem o comprimento esperado
+                if (telefone.length !== 11) {
+                    alert('Número de telefone inválido. Tente novamente.');
+                    return false; // Impede o envio do formulário
+                }
+
+                // Verifica se o número de cpf tem o comprimento esperado
+                if (cpf.length !== 11) {
+                    alert('Número de CPF inválido. Tente novamente.');
+                    return false; // Impede o envio do formulário
+                }
+
+            });
+        });
+    </script>
+
 
 </body>
 </html>

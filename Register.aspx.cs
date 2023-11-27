@@ -57,6 +57,12 @@ public partial class Register : System.Web.UI.Page
             msgErro.Text = "<span style='color: red;'>Senha é um Campo Obrigatório!</span>";
             txtSenha.BorderColor = Color.Red;
         }
+        else if (txtSenha.Text.Length < 6)
+        {
+            msgErro.Visible = true;
+            msgErro.Text = "<span style='color: red;'>A senha deve ter pelo menos 6 caracteres!</span>";
+            txtSenha.BorderColor = Color.Red;
+        }
         else if (string.IsNullOrEmpty(txtConfSenha.Text))
         {
             msgErro.Visible = true;
@@ -70,24 +76,24 @@ public partial class Register : System.Web.UI.Page
             txtConfSenha.BorderColor = Color.Red;
             txtSenha.BorderColor = Color.Red;
         }
-        else if (!checkCon.Checked || !checkVen.Checked)
+        else if (!checkCon.Checked && !checkVen.Checked)
         {
             msgErro.Text = "<span style='color: red;'>Informe se você é vendedor ou consumidor!</span>";
             msgErro.Visible = true;
         }
         else
         {
-            Response.Write("<script>alert('ERRO AO CADASTRAR');</script>"); ;
-            limparTextBox();
-        }
+            int resultado = CadastrarBanco();
 
-        int resultado = CadastrarBanco();
-
-        if (resultado >= 0)
-        {
-            Response.Write("<script>alert('Usuário Cadastrado com Sucesso!!');</script>");
-            limparTextBox();
-        }
+            if (resultado >= 0)
+            {
+                mostrarPopPupSucesso();
+            }
+            else
+            {
+                mostrarPopPupFracasso();
+            }
+        }  
     }
 
     public void limparCamposBordas()
@@ -138,6 +144,22 @@ public partial class Register : System.Web.UI.Page
         checkCon.Checked = false;
         checkVen.Checked = false;
         msgErro.Visible = false;
+    }
+
+    public void mostrarPopPupSucesso()
+    {
+        string tpUsuario = userType.Value; // Obtém o valor do HiddenField 
+        // Determina a página inicial com base no tipo de usuário
+        string paginaInicial = (tpUsuario == "Consumidor") ? "HomeConsumidor.aspx" : "HomeProdutor.aspx";
+        Response.Write("<script>alert('Cadastro Realizado Com Sucesso!');</script>");
+        // Adiciona um script para redirecionar imediatamente para a página inicial após o alerta
+        Response.Write($"<script>setTimeout(function(){{ window.location.href = '{paginaInicial}'; }}, 0);</script>");
+    }
+
+    public void mostrarPopPupFracasso()
+    {
+        ClientScript.RegisterClientScriptBlock(this.GetType(), "alert",
+            "swal('Cadastro Falhou!','Verifique sua conexão com a internet. Se a conexão estiver normal entre em contato com o suporte!','error')", true);
     }
 
 }
