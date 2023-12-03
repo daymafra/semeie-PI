@@ -26,13 +26,13 @@
                         <p>Entre com seus dados para criar sua conta</p>
                     </div>
                     <div class="welcome-img">
-                        <img src="assets/img/fruit shop-amico 1.png" alt="">
+                        <img src="assets/img/fruit_shop_amico_1.png" alt="">
                     </div>
                 </div>
             </div>
 
             <!-- form -->
-            <form id="form1" runat="server">
+            <form id="form1" runat="server" defaultbutton="btnCadastro">
                 <%--  controle HiddenField usado para armazenar o valor do tipo de usuário selecionado. Este controle será usado para enviar o valor para o servidor. --%>
                 <asp:HiddenField ID="userType" runat="server" />
                 <div class="form-header">
@@ -64,17 +64,17 @@
                             <div class="check-type">
                                 <div class="check-type-1">
                                     <asp:CheckBox type="checkbox" ID="checkCon" name="type-1" runat="server" OnClick="checkCon_Click"></asp:CheckBox>
-                                    <label for="terms">Consumidor</label>
+                                    <label for="checkCon">Consumidor</label>
                                 </div>
 
                                 <div class="check-type-2">
                                     <asp:CheckBox type="checkbox" ID="checkVen" name="type-2" runat="server" OnClick="checkVen_Click"></asp:CheckBox>
-                                    <label for="terms">Vendedor</label>
+                                    <label for="checkVen">Vendedor</label>
                                 </div>
                             </div>
 
                             <span class="line"></span>
-                            <asp:LinkButton type="submit" class="btn" ID="btnCadastro" runat="server" AutoPostBack="true" OnClick="BtnCadastro_Click">Cadastrar</asp:LinkButton>
+                            <asp:LinkButton type="submit" class="btn" ID="btnCadastro" runat="server" OnClick="BtnCadastro_Click">Cadastrar</asp:LinkButton>
                         </div>
                     </div>
 

@@ -158,7 +158,7 @@ public partial class Register : System.Web.UI.Page
         if (novoUsuario != null)
         {
             // Determina a página inicial com base no tipo de usuário
-            string paginaInicial = (novoUsuario.TipoUsuario == TipoUsuario.Consumidor) ? "HomeConsumidor.aspx?id=" + Funcoes.BaseCodifica(tpUsuario) : "HomeProdutor.aspx";
+            string paginaInicial = (novoUsuario.TipoUsuario == TipoUsuario.Consumidor) ? "HomeConsumidor.aspx?id=" + Funcoes.BaseCodifica(tpUsuario) : "HomeProdutor.aspx?id=" + Funcoes.BaseCodifica(tpUsuario);
             Response.Write("<script>alert('Cadastro Realizado Com Sucesso!');</script>");
             // Adiciona um script para redirecionar imediatamente para a página inicial após o alerta
             Response.Write($"<script>setTimeout(function(){{ window.location.href = '{paginaInicial}'; }}, 0);</script>");

@@ -30,7 +30,7 @@
             </div>
 
             <!-- form -->
-            <form id="form1" runat="server">
+            <form id="form1" runat="server" defaultbutton="btnEntrar">
                 <div class="form-header">
                     <h3>Bem vindo!</h3>
                 </div>
