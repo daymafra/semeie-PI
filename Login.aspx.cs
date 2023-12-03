@@ -103,7 +103,7 @@ public partial class Login : System.Web.UI.Page
                 else if (usuario.TipoUsuario == TipoUsuario.Vendedor)
                 {
                     // Redireciona para a página do vendedor
-                    Response.Redirect("HomeProdutor.aspx");
+                    Response.Redirect("HomeProdutor.aspx?id=" + Funcoes.BaseCodifica(id));
                 }
             }
 
