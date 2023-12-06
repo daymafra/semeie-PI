@@ -40,9 +40,9 @@ btnUserLogout.onclick = function () {
     modalLogout.style.display = "block";
 }
 
-closeModaLogout.onclick = function () {
-    modalLogout.style.display = "none";
-}
+//closeModaLogout.onclick = function () {
+//    modalLogout.style.display = "none";
+//}
 
 // Fechar modal se clicar fora
 window.onclick = function (event) {

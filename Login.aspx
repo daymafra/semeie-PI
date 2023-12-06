@@ -35,7 +35,7 @@
                     <h3>Bem vindo!</h3>
                 </div>
                 <div class="col-12 text-white text-center">
-                    <asp:Literal ID="msgErro" runat="server"></asp:Literal>
+                    <asp:Literal ID="msgErro" runat="server" ClientIDMode="Static"></asp:Literal>
                 </div>
                 <!-- wrap form -->
                 <div class="form-content">

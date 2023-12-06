@@ -63,12 +63,12 @@
                             <!-- type user -->
                             <div class="check-type">
                                 <div class="check-type-1">
-                                    <asp:CheckBox type="checkbox" ID="checkCon" name="type-1" runat="server" OnClick="checkCon_Click"></asp:CheckBox>
+                                    <asp:RadioButton type="checkbox" ID="checkCon" name="type-1" runat="server" OnClick="checkCon_Click"></asp:RadioButton>
                                     <label for="checkCon">Consumidor</label>
                                 </div>
 
                                 <div class="check-type-2">
-                                    <asp:CheckBox type="checkbox" ID="checkVen" name="type-2" runat="server" OnClick="checkVen_Click"></asp:CheckBox>
+                                    <asp:RadioButton type="checkbox" ID="checkVen" name="type-2" runat="server" OnClick="checkVen_Click"></asp:RadioButton>
                                     <label for="checkVen">Vendedor</label>
                                 </div>
                             </div>
@@ -157,7 +157,6 @@
             });
         });
     </script>
-
 
 </body>
 </html>

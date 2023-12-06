@@ -154,16 +154,17 @@ form{
     border-radius: 0.5rem;
     background: var(--green);
     color: var(--white);
-    border: none;
+    border: none !important;
 }
-.form-inputs a, .form-social-input a, 
-.input-check label, .check-type label{
-    color: #515151;
-    font-size: 0.875rem;
-    font-weight: 300;
-    line-height: 140%;
-    letter-spacing: 0.01094rem; 
-}
+
+    .form-inputs a, .form-social-input a,
+    .input-check label, .check-type label {
+        color: #515151;
+        font-size: 0.875rem;
+        font-weight: 300;
+        line-height: 140%;
+        letter-spacing: 0.01094rem;
+    }
 .form-inputs a span, .form-social-input a span, 
 .input-check span{
     color: var(--orange);

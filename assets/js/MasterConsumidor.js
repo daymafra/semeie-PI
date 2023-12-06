@@ -27,15 +27,14 @@ function toggleDropdown(event) {
 document.querySelector(".cart-icon").addEventListener("click", toggleDropdown);
 
 // fecha o dropdown
-cartCloseButton.addEventListener("click", function (event) {
-    event.stopPropagation();
-    dropdown.classList.remove("show");
-});
+//cartCloseButton.addEventListener("click", function (event) {
+//    event.stopPropagation();
+//    dropdown.classList.remove("show");
+//});
 
 //window.addEventListener("scroll", function () {
 //    dropdown.classList.remove("show");
 //});
-
 
 // não deixa fechar se clicar dentro
 dropdown.addEventListener("click", function (event) {
@@ -43,9 +42,8 @@ dropdown.addEventListener("click", function (event) {
 });
 
 // ********
-// * exluir item do carrinho
+// exluir item do carrinho
 var deleteButtons = document.querySelectorAll("#btnDelItem");
-
 deleteButtons.forEach(function (button) {
     button.addEventListener("click", function (event) {
         event.stopPropagation();
@@ -57,6 +55,7 @@ deleteButtons.forEach(function (button) {
     });
 });
 
+// atualizar itens do carrinho
 function updateCartAndSellerInfo() {
     var cartContent = document.querySelector(".cart-order");
     var cartEndContent = document.querySelector(".cart-end-order");
@@ -72,5 +71,40 @@ function updateCartAndSellerInfo() {
 }
 
 
-/////////////////////
+// Dropdown do Usuário - LogOut
+function myDropNavConsumidor() {
+    document.getElementById("myDropdownNav").classList.toggle("show");
+}
 
+window.onclick = function (eventUserIcon) {
+    if (!eventUserIcon.target.matches('.dropbtn-usericon')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+
+// Modal de Confirmação Logout
+var modalLogout = document.getElementById("modal-logout");
+var btnUserLogout = document.getElementById("userLogout");
+var closeModalogout = document.getElementsByClassName("close-modal-logout")[0];
+
+btnUserLogout.onclick = function () {
+    modalLogout.style.display = "block";
+}
+
+//closeModaLogout.onclick = function () {
+//    modalLogout.style.display = "none";
+//}
+
+// Fechar modal se clicar fora
+window.onclick = function (eventUserIcon) {
+    if (eventUserIcon.target == modalLogout) {
+        modalLogout.style.display = "none";
+    }
+}

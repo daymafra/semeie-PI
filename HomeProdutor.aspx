@@ -41,11 +41,11 @@
 
             <!-- right-->
             <div class="info-seller-right">
-                <button id="allOrders" class="headerbtn">
+                <button id="allOrders" class="headerbtn" type="button">
                     <i class='bx bx-note'></i>
                     Todos os pedidos
                 </button>
-                <button id="myOffers" class="headerbtn">
+                <button id="myOffers" class="headerbtn" type="button">
                     <i class='bx bxs-offer'></i>
                     Minhas ofertas
                 </button>
@@ -71,9 +71,9 @@
 
             <!-- Tab links -->
             <div class="tab">
-                <button class="tablinks" onclick="openTabFilter(event, 'tabPendentOrders')" id="defaultOpen">Pedidos pendentes</button>
-                <button class="tablinks" onclick="openTabFilter(event, 'tabOrdersConfirmed')">Confirmados</button>
-                <button class="tablinks" onclick="openTabFilter(event, 'tabOrdersFinalized')">Finalizados</button>
+                <button type="button" class="tablinks" onclick="openTabFilter(event, 'tabPendentOrders')" id="defaultOpen">Pedidos pendentes</button>
+                <button type="button" class="tablinks" onclick="openTabFilter(event, 'tabOrdersConfirmed')">Confirmados</button>
+                <button type="button" class="tablinks" onclick="openTabFilter(event, 'tabOrdersFinalized')">Finalizados</button>
             </div>
 
             <!-- Tab content -->
@@ -95,7 +95,7 @@
                             <span css="orderTotalValue">R$36,50</span>
                         </div>
                     </div>
-                    <button class="btnOrderStatus">Pendente</button>
+                    <button type="button" class="btnOrderStatus">Pendente</button>
                 </div>
             </div>
 
@@ -118,7 +118,7 @@
                         </div>
                     </div>
 
-                    <button class="btnOrderStatus" id="statusConfirm">Confirmado</button>
+                    <button type="button" class="btnOrderStatus" id="statusConfirm">Confirmado</button>
                 </div>
             </div>
 
@@ -141,7 +141,7 @@
                         </div>
                     </div>
 
-                    <button class="btnOrderStatus" id="statusFinalized">Finalizado</button>
+                    <button type="button" class="btnOrderStatus" id="statusFinalized">Finalizado</button>
                 </div>
             </div>
 
@@ -183,16 +183,16 @@
 
                     <div class="order-total">
                         <p>Total</p>
-                        <span>R$36,50</span>
+                        <span id="">R$36,50</span>
                     </div>
-
-                    <button id="verOrderDetails">Ver detalhes</button>
+                    
+                    <button type="button" id="verOrderDetails">Ver detalhes</button>
                 </div>
             </div>
         </section>
 
         <!-- modal ver pedido -->
-        <div class="modal" id="myModal">
+        <div class="modal" id="modal-viewOrder">
             <!-- content -->
             <div class="modal-content">
                 <!-- header -->
@@ -202,7 +202,7 @@
                         <p>de <span>@username</span></p>
                     </div>
 
-                    <button class="close-modal">
+                    <button type="button" class="close-modal">
                         <i class="bx bx-x-circle"></i>
                     </button>
                 </div>
@@ -283,9 +283,9 @@
 
                 <!-- btn confirmar / rejeitar -->
                 <div class="content-btns">
-                    <button id="rejectOrder">Rejeitar pedido</button>
-                    <button id="confirmOrder">Confirmar pedido</button>
-                    <button id="endOrder">Finalizar pedido</button>
+                    <button type="button" id="rejectOrder">Rejeitar pedido</button>
+                    <button type="button" id="confirmOrder">Confirmar pedido</button>
+                    <button type="button" id="endOrder">Finalizar pedido</button>
                 </div>
             </div>
         </div>
@@ -306,7 +306,7 @@
                 </div>
                 <!-- card order 01 -->
                 <div class="offer-card">
-                    <button id="editOffer">
+                    <button type="button" id="editOffer">
                         <i class="bx bx-edit"></i>
                     </button>
 
@@ -329,7 +329,7 @@
                     </div>
                 </div>
 
-                <button class="new-offer">
+                <button type="button" class="new-offer">
                     <i class="bx bx-plus"></i>
                 </button>
             </div>
@@ -351,7 +351,7 @@
                 </div>
                 <!-- card order 01 -->
                 <div class="popular-item-card">
-                    <button id="editItem">
+                    <button type="button" id="editItem">
                         <i class="bx bx-edit"></i>
                     </button>
 
@@ -404,7 +404,7 @@
                         <p id="clientName" class="client-name">Maria Souza</p>
                         <p id="clientLocal" class="client-local">Cunha</p>
                     </div>
-                    <button class="client-chat">
+                    <button type="button" class="client-chat">
                         <i class='bx bxs-message-square-dots'></i>
                     </button>
                 </div>

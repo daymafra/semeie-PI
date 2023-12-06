@@ -16,6 +16,7 @@
     --gray-03: #F9F9F9;
     --hover: #fafafa;
     --greenhover: #058647;
+    --orangehover: #e1822a;
     /* font size */
     --fs-01: 1.5rem; /* 24px -- titulos */
     --fs-02: 1.3rem; /* h3 */
@@ -142,8 +143,8 @@ nav {
     flex-direction: row-reverse;
     align-items: center;
 }
-/* mostrar dropdown
-.show {display:block;} */
+ mostrar dropdown
+.show{display:block;} 
 .qtd-itens {
     display: flex;
     align-items: center;
@@ -164,7 +165,7 @@ nav {
 }
 
 /* dropdown */
-.dropdown-usericon {
+.dropdown-usericon{
     position: relative;
     display: inline-block;
     float: right;
@@ -203,8 +204,9 @@ nav {
         background-color: var(--sec-orange);
         color: var(--orange);
     }
+
 /* mostrar o menu traves do js*/
-.show {
+.show-userIconDrop {
     display: block;
 }
 

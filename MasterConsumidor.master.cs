@@ -28,4 +28,10 @@ public partial class MasterConsumidor : System.Web.UI.MasterPage
     {
         
     }
+
+    protected void Sair_Click(object sender, EventArgs e)
+    {
+        Session["USUARIO"] = null;
+        Response.Redirect("Login.aspx");
+    }
 }

@@ -40,7 +40,7 @@
 
                         <li><a href="#">
                             <div class="search-box">
-                                <i id="search-icon" class="nav-icon" data-feather="search"></i>
+                                <i id="search-icon" class="nav-icon1" data-feather="search"></i>
                                 <input type="text" name="Search" id="search" placeholder="Procurar produto..">
                             </div>
                         </a></li>
@@ -48,7 +48,7 @@
                         <!-- cart icon -->
                         <li><a href="#" class="cart-icon dropdown" onclick="myDropdown()">
                             <span class="qtd-itens">3</span>
-                            <i class="nav-icon" data-feather="shopping-bag"></i>
+                            <i class="nav-icon1" data-feather="shopping-bag"></i>
                             <!-- dropdown - cart content -->
                             <div class="cart-dropdown" id="myDropdown">
                                 <div id="cart-content" class="cart-content-dropdown">
@@ -57,11 +57,11 @@
                                         <!-- cart header -->
                                         <div class="cart-header">
                                             <div class="cart-header-text">
-                                                <h3>Meu carinho</h3>
+                                                <h3 class="header">Meu carinho</h3>
                                                 <p>Os produtos são separados por vendedor</p>
                                             </div>
 
-                                            <asp:LinkButton CssClass="cartClose" ID="cartCloseButton" runat="server" OnClick="CartCloseButton_Click">
+                                            <asp:LinkButton type="button" CssClass="cartClose" ID="cartCloseButton" runat="server" OnClick="CartCloseButton_Click">
                                             <i class='bx bx-x-circle'></i>
                                             </asp:LinkButton>
                                         </div>
@@ -90,7 +90,7 @@
                                                 <div class="order-item" id="orderItem">
                                                     <!-- nome + excluir -->
                                                     <div class="order-item-top">
-                                                        <p cssclass="itemName">Kiwi</p>
+                                                        <p class="itemName">Kiwi</p>
                                                         <asp:LinkButton CssClass="btnDelItem" ID="btnDelItemButton" runat="server">
                                                             <i class='bx bxs-trash'></i>
                                                         </asp:LinkButton>
@@ -117,7 +117,7 @@
                                                             </div>
                                                         </div>
 
-                                                        <span cssclass="itemTotal">R$ 19,20</span>
+                                                        <span class="itemTotal">R$ 19,20</span>
                                                     </div>
                                                 </div>
 
@@ -125,7 +125,7 @@
                                                 <div class="order-item">
                                                     <!-- nome + excluir -->
                                                     <div class="order-item-top">
-                                                        <p id="itemName">Maçã</p>
+                                                        <p class="itemName">Maçã</p>
                                                         <asp:LinkButton CssClass="btnDelItem" ID="btnDelItemButton1" runat="server">
                                                             <i class='bx bxs-trash'></i>
                                                         </asp:LinkButton>
@@ -152,7 +152,7 @@
                                                             </div>
                                                         </div>
 
-                                                        <span id="itemTotal">R$ 6,56</span>
+                                                        <span class="itemTotal">R$ 6,56</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -217,10 +217,79 @@
                         </a>
                         </li>
 
+                        <%--<div class="dropdown-usericon-consumidor">
+                            <button onclick="myDropNavConsumidor()" type="button" class="dropbtn-usericon-consumidor">
+                                <i class="nav-icon1 bx bx-user-circle"></i>
+                            </button>
+                            <div id="myDropdownNav" class="dropdown-content">
+                                <a href="#" class="drop-link" id="profileSettings">
+                                    <i class='bx bx-cog'></i>
+                                    Configurações</a>
+                                <a href="#" class="drop-link" id="userLogout">
+                                    <i class='bx bx-log-out'></i>
+                                    Sair</a>
+                                <a href="#" class="drop-link" id="userHelp">
+                                    <i class='bx bx-help-circle'></i>
+                                    Ajuda</a>
+                            </div>
+                        </div>
+
+                        <div class="modal-logout" id="modal-logout">
+                            <div class="modal-content">
+                                <div class="confirm-logout-header">
+                                    <div class="confirm-logout-text">
+                                        <h3>Tem certeza que deseja encerrar sua sessão?</h3>
+                                        <!-- <p>Sua sessão será encerrada </p> -->
+                                    </div>
+                                    <button class="close-modal-logout">
+                                        <i class="bx bx-x-circle"></i>
+                                    </button>
+                                </div>
+
+                                <div class="confirm-logout-btns">
+                                    <button id="recuseLogout" class="btnlgot">Não quero encerrar a sessão</button>
+                                    <button id="confirmLogout" class="btnlgot">Sim, enecerrar sessão</button>
+                                </div>
+                            </div>
+                        </div>--%>
+
                         <!-- user icon -->
-                        <li><a href="#">
-                            <i class="nav-icon bx bx-user-circle"></i>
-                        </a></li>
+                        <div class="dropdown-usericon">
+                            <button onclick="myDropNavConsumidor()"  type="button" class="dropbtn-usericon">
+                                <i class="nav-icon bx bx-user-circle"></i>
+                            </button>
+                            <div id="myDropdownNav" class="dropdown-content">
+                                <a href="#" class="drop-link" id="profileSettings">
+                                    <i class='bx bx-cog'></i>
+                                    Configurações</a>
+                                <a href="#" class="drop-link" id="userLogout">
+                                    <i class='bx bx-log-out'></i>
+                                    Sair</a>
+                                <a href="#" class="drop-link" id="userHelp">
+                                    <i class='bx bx-help-circle'></i>
+                                    Ajuda</a>
+                            </div>
+                        </div>
+
+                        <div class="modal-logout" id="modal-logout">
+                            <div class="modal-content">
+                                <div class="confirm-logout-header">
+                                    <div class="confirm-logout-text">
+                                        <h3>Tem certeza que deseja encerrar sua sessão?</h3>
+                                        <!-- <p>Sua sessão será encerrada </p> -->
+                                    </div>
+                                    <button class="close-modal-logout" type="button">
+                                        <i class="bx bx-x-circle"></i>
+                                    </button>
+                                </div>
+
+                                <div class="confirm-logout-btns">
+                                    <asp:LinkButton id="recuseLogout" class="btnlgot" runat="server">Não quero encerrar a sessão</asp:LinkButton>
+                                    <asp:LinkButton id="confirmLogout" class="btnlgot" runat="server" OnClick="Sair_Click">Sim, enecerrar sessão</asp:LinkButton>
+                                </div>
+                            </div>
+                        </div>
+                        <asp:HyperLink ID="HyperLink1" runat="server" ClientIDMode="Static" href="#"></asp:HyperLink>
                         <asp:HyperLink ID="loginEmail" runat="server" href="#"></asp:HyperLink>
                     </ul>
                 </div>

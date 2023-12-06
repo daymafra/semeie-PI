@@ -51,7 +51,7 @@
                                 <img src="assets/img_consumidor/categoria_img/laticionios.png" />
                             </div>
                             <div class="tag-item-name">
-                                <p id="ctgName">Laticínios</p>
+                                <p class="ctgName">Laticínios</p>
                             </div>
                         </div>
 
