@@ -16,7 +16,7 @@
                 <!-- info text -->
                 <div class="info-seller-text">
                     <div class="info-top">
-                        <span id="sellerName">Banca do Marcos</span>
+                        <span id="sellerName" runat="server"> </span>
                         <span id="sellerLocal">Cunha, SP</span>
                     </div>
                     <div class="info-bottom">

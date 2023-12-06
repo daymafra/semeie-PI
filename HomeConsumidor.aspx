@@ -93,21 +93,9 @@
 
             <!-- cards carrosseul -->
             <div class="result-group-cards">
-                <%--testando card com repeater que vem do componente .ascx card 01--%>
-                <%--<asp:Repeater ID="rptProducts" runat="server">
-                 <ItemTemplate>
-                    <uc:ProductCard ID="ProductCard1" runat="server"
-                        ProductName='<%# Eval("ProductName") %>'
-                        ProductPrice='<%# Eval("ProductPrice") %>'
-                        ProductImageURL='<%# Eval("ProductImageURL") %>'
-                        ProductRating='<%# Eval("ProductRating") %>'
-                        ProductUnit='<%# Eval("ProductUnit") %>'/>
-                        
-                 </ItemTemplate>
-                </asp:Repeater>--%>
-
-                <%--testando repeater com escopo html - mais provavel que de certo, basta chamar do banco--%>
-                <asp:Repeater ID="rptProducts" runat="server">
+               
+                <!-- Utilizando o Repeater para gerar dinamicamente os produtos -->
+               <%-- <asp:Repeater ID="rptProducts" runat="server">
                     <ItemTemplate>
                         <div class="result-card-item">
                             <!-- item img -->
@@ -159,7 +147,23 @@
                             </div>
                         </div>
                     </ItemTemplate>
-                </asp:Repeater>
+                </asp:Repeater>--%>
+                <asp:Repeater ID="productRepeater" runat="server">
+                <ItemTemplate>
+                    <div class="result-card-item">
+                        <div class="result-item-img">
+                            <img src='<%# Eval("pro_fotoCapa") %>' alt='<%# Eval("pro_nome") %>' />
+                        </div>
+                        <div class="result-item-info">
+                            <div class="result-item-info-top">
+                                <p id="item-name"><%# Eval("pro_nome") %></p>
+                                <p id="item-price"><%# Eval("pro_preco") %></p>
+                            </div>
+                            <!-- Outras informações do produto aqui -->
+                        </div>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
 
             </div>
         </section>
