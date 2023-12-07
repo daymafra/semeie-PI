@@ -93,31 +93,27 @@
 
             <!-- cards carrosseul -->
             <div class="result-group-cards">
-               
+
                 <!-- Utilizando o Repeater para gerar dinamicamente os produtos -->
-               <%-- <asp:Repeater ID="rptProducts" runat="server">
+                <asp:Repeater ID="productRepeater" runat="server">
                     <ItemTemplate>
                         <div class="result-card-item">
-                            <!-- item img -->
                             <div class="result-item-img">
-                                <img src="assets/img_consumidor/result_imgs/repolho.png" />
+                                <img src='<%# Eval("pro_fotoCapa") %>' alt='<%# Eval("pro_nome") %>' />
                             </div>
-                            <!-- iten info -->
                             <div class="result-item-info">
-                                <!-- nome + preço -->
                                 <div class="result-item-info-top">
-                                    <p id="item-name"><%# Eval("ProductName") %></p>
-                                    <p id="item-price"><%# Eval("ProductPrice") %></p>
+                                    <p id="item-name"><%# Eval("pro_nome") %></p>
+                                    <p id="item-price"><%# Eval("pro_preco") %></p>
                                 </div>
                                 <!-- avaliação + kg -->
                                 <div class="result-item-info-bottom">
                                     <div class="item-avaliacao">
                                         <img src="assets/img_consumidor/result_imgs/Star.png" />
-                                        <span><%# Eval("ProductRating") %></span>
                                     </div>
                                     <img class="circle-divider" src="assets/img_consumidor/result_imgs/circledivider.png" alt="">
                                     <div class="item-un-venda">
-                                        <span><%# Eval("ProductUnit") %></span>
+                                        <span>Kg</span>
                                     </div>
                                 </div>
 
@@ -144,26 +140,11 @@
                                         <i class="bx bx-shopping-bag"></i>
                                     </button>
                                 </div>
+                                
                             </div>
                         </div>
                     </ItemTemplate>
-                </asp:Repeater>--%>
-                <asp:Repeater ID="productRepeater" runat="server">
-                <ItemTemplate>
-                    <div class="result-card-item">
-                        <div class="result-item-img">
-                            <img src='<%# Eval("pro_fotoCapa") %>' alt='<%# Eval("pro_nome") %>' />
-                        </div>
-                        <div class="result-item-info">
-                            <div class="result-item-info-top">
-                                <p id="item-name"><%# Eval("pro_nome") %></p>
-                                <p id="item-price"><%# Eval("pro_preco") %></p>
-                            </div>
-                            <!-- Outras informações do produto aqui -->
-                        </div>
-                    </div>
-                </ItemTemplate>
-            </asp:Repeater>
+                </asp:Repeater>
 
             </div>
         </section>
