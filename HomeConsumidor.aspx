@@ -135,8 +135,7 @@
                                     </div>
 
                                     <!-- btn cart -->
-                                    <button class="result-item-btnCart">
-                                        <!-- <img src="../assets/img/icons/bag icon.png" alt=""> -->
+                                    <button class="result-item-btnCart" title="Adicionar produto à sacola de compras?">
                                         <i class="bx bx-shopping-bag"></i>
                                     </button>
                                 </div>
