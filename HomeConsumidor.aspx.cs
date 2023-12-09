@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Web;
+using System.Web.Script.Services;
+using System.Web.Services;
 using MySql.Data.MySqlClient;
 
 public partial class HomeConsumidor : System.Web.UI.Page
@@ -33,6 +37,26 @@ public partial class HomeConsumidor : System.Web.UI.Page
 
         // fecha a conexão após o uso
         con.Close();
+    }
+
+    // Método para adicionar produto à sacola do lado do servidor
+    [WebMethod]
+    public static void AdicionarProdutoNaSacola(string nome, string preco, string quantidade)
+    {
+        try
+        { // Lógica para adicionar o produto à sacola
+          // Aqui você pode usar sessão, cookies ou qualquer outra abordagem que preferir
+          // Neste exemplo, estou usando sessão
+            List<ProdutoSistema> sacola = (List<ProdutoSistema>)HttpContext.Current.Session["SacolaDeCompras"] ?? new List<ProdutoSistema>();
+            sacola.Add(new ProdutoSistema { Nome = nome, Preco = preco, Quantidade = quantidade });
+            HttpContext.Current.Session["SacolaDeCompras"] = sacola;
+        }
+        catch (Exception ex)
+        {
+            // Registre a exceção para fins de depuração
+            Console.WriteLine($"Erro ao adicionar produto à sacola: {ex.Message}");
+            throw; // Re-throw para que o AJAX possa capturar o erro
+        }
     }
 
 }
