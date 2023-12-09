@@ -202,15 +202,15 @@
     <%--<script>
     feather.replace();
 
-    // Adicione o código JavaScript para manipular o clique no botão e adicionar ao carrinho
+    // código JavaScript para manipular o clique no botão e adicionar ao carrinho
     document.addEventListener("DOMContentLoaded", function () {
-        // Encontrar todos os botões com a classe
+        // Encontra o botão com a classe
         var addToCartButtons = document.querySelectorAll(".result-item-btnCart");
 
-        // Adicionar um ouvinte de eventos para cada botão
+        // Adiciona um ouvinte de eventos para cada botão
         addToCartButtons.forEach(function (button) {
             button.addEventListener("click", function () {
-                // Adicione um alert simples para verificar se a lógica está funcionando
+                // Adiciona um alert simples para verificar se a lógica está funcionando
                 alert("Produto adicionado à sacola de compras!");
             });
         });
@@ -220,23 +220,23 @@
     <script>
         feather.replace();
 
-            // Adicione o código JavaScript para manipular o clique no botão e adicionar ao carrinho
+            // código JavaScript para manipular o clique no botão e adicionar ao carrinho
             document.addEventListener("DOMContentLoaded", function () {
-                // Encontrar todos os botões com a classe
+                // Encontra o botão com a classe
                 var addToCartButtons = document.querySelectorAll(".result-item-btnCart");
 
-                // Adicionar um ouvinte de eventos para cada botão
+                // Adiciona um ouvinte de eventos para cada botão
                 addToCartButtons.forEach(function (button) {
                     button.addEventListener("click", function () {
-                        // Obter informações do produto
+                        // Obtém informações do produto
                         var productName = this.closest(".result-card-item").querySelector("#item-name").innerText;
                         var productPrice = this.closest(".result-card-item").querySelector("#item-price").innerText;
                         var productQuantity = this.closest(".result-card-item").querySelector(".numQtd").innerText;
 
-                        // Adicionar um alert para verificar se as informações do produto estão corretas
+                        // Adiciona um alert para verificar se as informações do produto estão corretas
                         alert("Produto: " + productName + "\nPreço: " + productPrice + "\nQuantidade: " + productQuantity);
 
-                        // Adicionar chamada AJAX sem jQuery para enviar informações ao servidor
+                        // Adiciona chamada AJAX sem jQuery para enviar informações ao servidor
                         var xhr = new XMLHttpRequest();
                         xhr.open("POST", "HomeConsumidor.aspx/AdicionarProdutoNaSacola", true);
                         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
