@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 
 public partial class MasterConsumidor : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        //DataBind();
+        //Session["SacolaDeCompras"] = null;
         if (Session["USUARIO"] != null)
         {
             Usuario usuario = (Usuario)Session["USUARIO"];
@@ -33,5 +36,15 @@ public partial class MasterConsumidor : System.Web.UI.MasterPage
     {
         Session["USUARIO"] = null;
         Response.Redirect("Login.aspx");
+    }
+
+    // Método para obter a quantidade de itens na sacola
+    public int ObterQuantidadeItensNaSacola()
+    {
+        // Lógica para obter a quantidade de itens na sacola
+        // Você pode usar sessão, cookies ou qualquer outra abordagem que preferir
+        // Neste exemplo, estou usando sessão
+        List<ProdutoSistema> sacola = (List<ProdutoSistema>)Session["SacolaDeCompras"];
+        return sacola != null ? sacola.Count : 0;
     }
 }

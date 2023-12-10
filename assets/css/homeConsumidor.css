@@ -12,7 +12,7 @@ nav {
 
 body {
     overflow-x: hidden;
-    background-image: url(../img/bg.png);
+    background-image: url('/assets/img_consumidor/bg.png');
     background-repeat: no-repeat;
     background-size: auto 650px;
     background-position: right top;

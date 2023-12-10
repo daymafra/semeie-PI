@@ -47,7 +47,7 @@
 
                         <!-- cart icon -->
                         <li><a href="#" class="cart-icon dropdown" onclick="myDropdown()">
-                            <span class="qtd-itens">3</span>
+                            <span class="qtd-itens"><%# ObterQuantidadeItensNaSacola() %></span>
                             <i class="nav-icon1" data-feather="shopping-bag"></i>
                             <!-- dropdown - cart content -->
                             <div class="cart-dropdown" id="myDropdown">

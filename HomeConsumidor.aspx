@@ -199,24 +199,6 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
-    <%--<script>
-    feather.replace();
-
-    // código JavaScript para manipular o clique no botão e adicionar ao carrinho
-    document.addEventListener("DOMContentLoaded", function () {
-        // Encontra o botão com a classe
-        var addToCartButtons = document.querySelectorAll(".result-item-btnCart");
-
-        // Adiciona um ouvinte de eventos para cada botão
-        addToCartButtons.forEach(function (button) {
-            button.addEventListener("click", function () {
-                // Adiciona um alert simples para verificar se a lógica está funcionando
-                alert("Produto adicionado à sacola de compras!");
-            });
-        });
-    });
-    </script>--%>
-
     <script>
         feather.replace();
 
@@ -245,7 +227,12 @@
             
                         xhr.onreadystatechange = function () {
                             if (xhr.readyState === 4 && xhr.status === 200) {
-                                // Lógica de sucesso
+                                // Atualizar dinamicamente o número de itens na sacola
+                                var quantidadeItens = parseInt(document.querySelector(".qtd-itens").innerText);
+                                document.querySelector(".qtd-itens").innerText = quantidadeItens + 1;
+
+                                // Recarregar os produtos após a adição
+                                CarregarProdutos();
                             } else {
                                 // Lógica de erro
                             }
