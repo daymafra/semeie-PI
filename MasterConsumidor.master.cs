@@ -31,9 +31,7 @@ public partial class MasterConsumidor : System.Web.UI.MasterPage
     // Método para obter a quantidade de itens na sacola
     public int ObterQuantidadeItensNaSacola()
     {
-        // Lógica para obter a quantidade de itens na sacola
-        // Você pode usar sessão, cookies ou qualquer outra abordagem que preferir
-        // Neste exemplo, estou usando sessão
+        // Lógica para obter a quantidade de itens na sacola usando sessão
         List<ProdutoSistema> sacola = (List<ProdutoSistema>)Session["SacolaDeCompras"];
         return sacola != null ? sacola.Count : 0;
     }

@@ -10,10 +10,7 @@ public partial class HomeConsumidor : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         ((MasterConsumidor)this.Master).DataBind();
-        if (!IsPostBack)
-        {
-            CarregarProdutos();
-        }
+        CarregarProdutos();
     }
 
     protected void CarregarProdutos()
