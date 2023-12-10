@@ -61,7 +61,7 @@
                                                 <p>Os produtos são separados por vendedor</p>
                                             </div>
 
-                                            <asp:LinkButton type="button" CssClass="cartClose" ID="cartCloseButton" runat="server" OnClick="CartCloseButton_Click">
+                                            <asp:LinkButton type="button" CssClass="cartClose" ID="cartCloseButton" runat="server">
                                             <i class='bx bx-x-circle'></i>
                                             </asp:LinkButton>
                                         </div>
@@ -79,7 +79,7 @@
                                                     </div>
                                                 </div>
                                                 <!-- btn chat -->
-                                                <asp:LinkButton CssClass="sellerChat" ID="sellerChatButton" runat="server" OnClick="SellerChatButton_Click">
+                                                <asp:LinkButton CssClass="sellerChat" ID="sellerChatButton" runat="server">
                                                     <i class='bx bxs-message-square-dots'></i>
                                                 </asp:LinkButton>
                                             </div>

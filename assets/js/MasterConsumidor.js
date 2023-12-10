@@ -43,32 +43,32 @@ dropdown.addEventListener("click", function (event) {
 
 // ********
 // exluir item do carrinho
-var deleteButtons = document.querySelectorAll("#btnDelItem");
-deleteButtons.forEach(function (button) {
-    button.addEventListener("click", function (event) {
-        event.stopPropagation();
-        var cartItem = event.target.closest(".order-item");
-        if (cartItem) {
-            cartItem.remove();
-            updateCartAndSellerInfo();
-        }
-    });
-});
+//var deleteButtons = document.querySelectorAll("#btnDelItem");
+//deleteButtons.forEach(function (button) {
+//    button.addEventListener("click", function (event) {
+//        event.stopPropagation();
+//        var cartItem = event.target.closest(".order-item");
+//        if (cartItem) {
+//            cartItem.remove();
+//            updateCartAndSellerInfo();
+//        }
+//    });
+//});
 
 // atualizar itens do carrinho
-function updateCartAndSellerInfo() {
-    var cartContent = document.querySelector(".cart-order");
-    var cartEndContent = document.querySelector(".cart-end-order");
-    var cartItems = document.querySelectorAll(".order-item");
+//function updateCartAndSellerInfo() {
+//    var cartContent = document.querySelector(".cart-order");
+//    var cartEndContent = document.querySelector(".cart-end-order");
+//    var cartItems = document.querySelectorAll(".order-item");
 
-    if (cartItems.length === 0) {
-        cartContent.style.display = "none";
-        cartEndContent.style.display = "none";
-    } else {
-        cartContent.style.display = "block";
-        cartEndContent.style.display = "block";
-    }
-}
+//    if (cartItems.length === 0) {
+//        cartContent.style.display = "none";
+//        cartEndContent.style.display = "none";
+//    } else {
+//        cartContent.style.display = "block";
+//        cartEndContent.style.display = "block";
+//    }
+//}
 
 
 // Dropdown do Usuário - LogOut
