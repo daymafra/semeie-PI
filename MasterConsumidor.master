@@ -83,9 +83,50 @@
                                                     <i class='bx bxs-message-square-dots'></i>
                                                 </asp:LinkButton>
                                             </div>
-
-                                            <!-- order itens -->
+                                            <% foreach (var produto in ObterDetalhesItensNaSacola())
+                                                { %>
                                             <div class="order-itens-content">
+                                                <!-- item order 01 -->
+                                                <div class="order-item" id="orderItem">
+                                                    <!-- nome + excluir -->
+                                                    <div class="order-item-top">
+                                                        <span class="item-name"><%= produto.Nome %></span>
+                                                        <asp:LinkButton CssClass="btnDelItem" ID="btnDelItemButton" runat="server">
+    <i class='bx bxs-trash'></i>
+                                                        </asp:LinkButton>
+                                                    </div>
+                                                    <!-- detais + total -->
+                                                    <div class="order-item-bottom">
+                                                        <div class="order-item-detail">
+                                                            <!-- qtd -->
+                                                            <div class="order-item-qtdBtn">
+                                                                <asp:LinkButton CssClass="btnQtdMin" ID="btnQtdMinButton" runat="server">
+                <i class="bx bx-minus"></i>
+                                                                </asp:LinkButton>
+
+                                                                <span class="numQtd"><span class="item-quantity"><%= produto.Quantidade %></span>
+                                                                </span>
+                                                                <asp:LinkButton CssClass="btnQtdMax" ID="btnQtdMaxButton" runat="server">
+                <i class="bx bx-plus"></i>
+                                                                </asp:LinkButton>
+                                                            </div>
+                                                            <!-- un -->
+                                                            <img class="circle-divider" src="assets/img_consumidor/result_imgs/circledivider.png" alt="">
+                                                            <div class="item-un-venda">
+                                                                <span>Kg</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <span class="itemTotal"><span class="item-price"><%= produto.Preco %></span></span>
+                                                    </div>
+
+
+
+                                                </div>
+                                            </div>
+                                            <% } %>
+                                            <!-- order itens -->
+                                            <%--<div class="order-itens-content">
                                                 <!-- item order 01 -->
                                                 <div class="order-item" id="orderItem">
                                                     <!-- nome + excluir -->
@@ -162,7 +203,7 @@
                                                 <p>Total</p>
                                                 <span id="valorTotal">R$23,61
                                                 </span>
-                                            </div>
+                                            </div>--%>
                                         </div>
                                     </div>
 

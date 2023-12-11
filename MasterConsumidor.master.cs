@@ -7,6 +7,7 @@ public partial class MasterConsumidor : System.Web.UI.MasterPage
     {
         //DataBind();
         //Session["SacolaDeCompras"] = null;
+        //AtualizarSacola();
         if (Session["USUARIO"] != null)
         {
             Usuario usuario = (Usuario)Session["USUARIO"];
@@ -34,5 +35,13 @@ public partial class MasterConsumidor : System.Web.UI.MasterPage
         // Lógica para obter a quantidade de itens na sacola usando sessão
         List<ProdutoSistema> sacola = (List<ProdutoSistema>)Session["SacolaDeCompras"];
         return sacola != null ? sacola.Count : 0;
+    }
+
+    // Método para obter os detalhes dos itens na sacola
+    public List<ProdutoSistema> ObterDetalhesItensNaSacola()
+    {
+        // Lógica para obter os detalhes dos itens na sacola usando sessão
+        List<ProdutoSistema> sacola = (List<ProdutoSistema>)Session["SacolaDeCompras"];
+        return sacola ?? new List<ProdutoSistema>();
     }
 }
