@@ -1,7 +1,7 @@
 ﻿//// modal ver pedido
 var modalViewOrder = document.getElementById("modal-viewOrder");
 var btnOrder = document.getElementById("verOrderDetails");
-var btnCloseVOrder = document.getElementsByClassName("close-modal");
+var btnCloseVOrder = document.getElementsByClassName("close-modal-viewOrder");
 btnOrder.onclick = function () {
     modalViewOrder.style.display = "block";
 }
@@ -16,7 +16,7 @@ window.onclick = function (event) {
 
 //// verificação, confirmação do pedido
 document.getElementById("verOrderDetails").addEventListener("click", openModal);
-document.querySelector(".close-modal").addEventListener("click", closeModal);
+document.querySelector(".close-modal-viewOrder").addEventListener("click", closeModal);
 document.getElementById("confirmOrder").addEventListener("click", confirmOrder);
 document.getElementById("rejectOrder").addEventListener("click", rejectOrder);
 document.getElementById("endOrder").addEventListener("click", endOrder);

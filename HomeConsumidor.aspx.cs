@@ -19,7 +19,7 @@ public partial class HomeConsumidor : System.Web.UI.Page
         IDbConnection con = MapeamentoBD.Conexao();
 
         // Obtém o comando
-        IDbCommand cmd = MapeamentoBD.ComandoSQL("SELECT pro_nome, pro_fotoCapa, pro_preco FROM pro_produtoSistema", con);
+        IDbCommand cmd = MapeamentoBD.ComandoSQL("SELECT pro_id, pro_nome, pro_fotoCapa, pro_preco FROM pro_produtoSistema", con);
 
         // Cria um adaptador e um DataTable para armazenar os resultados
         IDataAdapter adapter = new MySqlDataAdapter((MySqlCommand)cmd);

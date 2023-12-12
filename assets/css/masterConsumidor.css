@@ -627,12 +627,15 @@ h3 {
 }
 
 .item-avaliacao span, .item-peso-apr span {
-    color: var(--gray-01);
-    font-family: Urbanist;
-    font-size: .85rem;
-    font-weight: var(--w-500);
+    color: var(--gray-01) !important;
+    font-family: Urbanist !important;
+    font-size: .85rem !important;
+    font-weight: var(--w-500) !important;
 }
 
+.item-avaliacao img {
+    width: 18px;
+}
 .item-un-venda {
     display: flex;
     padding: 4px 0.625rem;
@@ -644,10 +647,10 @@ h3 {
     border-radius: 8px;
 }
 
-    .item-un-venda span {
-        color: var(--green);
-        font-size: .75rem;
-    }
+.item-un-venda span {
+    color: var(--green);
+    font-size: .75rem;
+}
 
 .result-item-info-qtdCart {
     display: flex;

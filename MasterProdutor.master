@@ -8,6 +8,7 @@
 
     <link href="assets/css/masterProdutor.css" rel="stylesheet" />
     <link href="assets/css/homeProdutor.css" rel="stylesheet" />
+    <link href="assets/css/meusProdutos.css" rel="stylesheet" />
     <link href="assets/css/modais.css" rel="stylesheet" />
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
@@ -27,8 +28,8 @@
                     <a href="#" class="logo">Semeie.</a>
 
                     <ul class="navbar">
-                        <li><a href="#" class="active-page">Minha banca</a></li>
-                        <li><a href="#">Meus produtos</a></li>
+                        <li><a href="HomeProdutor.aspx" class="active-page">Minha banca</a></li>
+                        <li><a href="meusProdutos.aspx">Meus produtos</a></li>
                         <li><a href="#">Balanço</a></li>
                     </ul>
                 </div>
@@ -95,6 +96,7 @@
 
     <script src="assets/js/masterProdutor.js"></script>
     <script src="assets/js/homeProdutor.js"></script>
+    <script src="assets/js/meusProdutos.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script>

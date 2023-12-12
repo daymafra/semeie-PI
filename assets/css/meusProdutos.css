@@ -1,0 +1,190 @@
+:root{
+    /* cores */
+    --green: #00B860;
+    --sec-green: #80DBAF;
+    --orange: #FF8413;
+    --sec-orange: #FFE6D0;
+    --black: #161621;
+    --white: #FAFAFA;
+    --error:#EB4747;
+
+    --gray-01: #4B4B4B;
+    --gray-02: #8B8B90; 
+    --gray-03: #F9F9F9;
+    --hover: #fafafa;
+    --greenhover: #058647;
+    
+    /* font size */
+    --fs-01: 1.5rem; /* 24px -- titulos */
+    --fs-02: 1.3rem; /* h3 */
+    --fs-03: 1rem; /* 16 px*/
+    --fs-04: 0.80rem; /* links*/
+    /* weight */
+    --w-300: 300;
+    --w-400: 400;
+    --w-500: 500;
+    --w-600: 600;
+}
+
+main{
+    margin-top: 10%;
+}
+
+/* header btns */
+.header-buttons .hd-buttons{
+    min-width: 300px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    padding: 16px 24px ;
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+#cadastrarProdBtn{
+    background-color: #00B860 !important;
+}
+#desativarProdBtn{
+    background-color: var(--orange) !important; 
+}
+
+
+/* modal */
+/* obs: estilp padrãp dos modais de encontram em modais.css */
+.formCad-container {
+  margin: 0 auto;
+  width: 100%;
+}
+.formCad-stepsCad-steps {
+  padding-bottom: 18px;
+  margin-bottom: 35px;
+  border-bottom: 1px solid #DDE3EC;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.formCad-stepsCad-steps ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 10%;
+  width: 100%;
+}
+.formCad-stepsCad-steps li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  text-align: center;
+  color: var(--gray-02);
+}
+.formCad-stepsCad-steps li span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d7d7d9;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--gray-02);
+}
+.formCad-stepsCad-steps li.active {
+  color: var(--green);
+}
+.formCad-stepsCad-steps li.active span {
+  background: var(--green);
+  color: var(--white);
+}
+
+.formCad-stepsCad-steps-item1,
+.formCad-stepsCad-steps-item2,
+.formCad-stepsCad-steps-item3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+}
+.formCad-stepsCad-steps-item1 p,
+.formCad-stepsCad-steps-item2 p,
+.formCad-stepsCad-steps-item3 p{
+    width: 50px;
+    text-align: center !important;
+}
+.formCad-page-step-1,
+.formCad-page-step-2,
+.formCad-page-step-3 {
+  display: none;
+}
+.formCad-page-step-1.active,
+.formCad-page-step-2.active
+{
+  display: block;
+}
+.formCad-page-step-3.active{
+    display: flex;
+}
+.formCad-page-step-3{
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+}
+.formCad-btns {
+  display: flex;
+  align-items: strech;
+  align-self: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 25px;
+}
+.formCad-back-btn {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: var(--white);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 12px;
+  padding: 16px 24px;
+  background-color: var(--orange);
+  display: none;
+  align-items: strech;
+  justify-content: stretch;
+  width: 100%;
+}
+.formCad-back-btn.active {
+  display: block;
+}
+.formCad-btn {
+  display: flex;
+  align-items: stretch;
+  align-self: stretch;
+  justify-content: center;
+  width: 100%;
+  gap: 5px;
+  font-size: 16px;
+  border-radius: 12px;
+  padding: 16px 24px;
+  border: none;
+  font-weight: 500;
+  background-color: var(--green);
+  color: white;
+  cursor: pointer;
+}
+.formCad-btn:hover {
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+

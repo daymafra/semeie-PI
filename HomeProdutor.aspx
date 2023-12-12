@@ -192,7 +192,7 @@
         </section>
 
         <!-- modal ver pedido -->
-        <div class="modal" id="modal-viewOrder">
+        <div class="modal-view-order" id="modal-viewOrder">
             <!-- content -->
             <div class="modal-content">
                 <!-- header -->
@@ -202,7 +202,7 @@
                         <p>de <span>@username</span></p>
                     </div>
 
-                    <button type="button" class="close-modal">
+                    <button type="button" class="close-modal-viewOrder">
                         <i class="bx bx-x-circle"></i>
                     </button>
                 </div>
