@@ -5,9 +5,6 @@ public partial class MasterConsumidor : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //DataBind();
-        //Session["SacolaDeCompras"] = null;
-        //AtualizarSacola();
         if (Session["USUARIO"] != null)
         {
             Usuario usuario = (Usuario)Session["USUARIO"];
