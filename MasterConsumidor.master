@@ -83,29 +83,29 @@
                                                     <i class='bx bxs-message-square-dots'></i>
                                                 </asp:LinkButton>
                                             </div>
-                                            <asp:Repeater runat="server" ID="repeaterItens" OnItemCommand="repeaterItens_ItemCommand" ClientIDMode="Static"> 
+                                            <asp:Repeater runat="server" ID="repeaterItens" OnItemCommand="repeaterItens_ItemCommand" ClientIDMode="Static">
                                                 <ItemTemplate>
                                                     <div class="order-itens-content">
                                                         <!-- item order 01 -->
                                                         <div class="order-item" id="orderItem">
                                                             <!-- nome + excluir -->
                                                             <div class="order-item-top">
-                                                                <span id="selectName"><%# Eval("Nome") %></span>
+                                                                <asp:Label CssClass="itemName" ID="lblNome" runat="server"><%# Eval("Nome") %></asp:Label>
                                                                 <asp:LinkButton CssClass="btnDelItem" ID="btnDelItemButton" CommandName="ExcluirItem" CommandArgument='<%# Container.ItemIndex %>' runat="server">
-<i class='bx bxs-trash'></i>
+                        <i class='bx bxs-trash'></i>
                                                                 </asp:LinkButton>
                                                             </div>
-                                                            <!-- detais + total -->
+                                                            <!-- detalhes + total -->
                                                             <div class="order-item-bottom">
                                                                 <div class="order-item-detail">
                                                                     <!-- qtd -->
                                                                     <div class="order-item-qtdBtn">
                                                                         <asp:LinkButton CssClass="btnQtdMin" ID="btnQtdMinButton" runat="server">
-        <i class="bx bx-minus"></i>
+                                <i class="bx bx-minus"></i>
                                                                         </asp:LinkButton>
-                                                                        <span id="selectQtd"><%# Eval("Quantidade") %></span>
+                                                                        <asp:Label CssClass="itemQuantity" ID="lblQuantidade" runat="server"><%# Eval("Quantidade") %></asp:Label>
                                                                         <asp:LinkButton CssClass="btnQtdMax" ID="btnQtdMaxButton" runat="server">
-        <i class="bx bx-plus"></i>
+                                <i class="bx bx-plus"></i>
                                                                         </asp:LinkButton>
                                                                     </div>
                                                                     <!-- un -->
@@ -114,7 +114,7 @@
                                                                         <span>Kg</span>
                                                                     </div>
                                                                 </div>
-                                                                <span id="selectPreco"><%# Eval("Preco") %></span>
+                                                                <asp:Label CssClass="itemPrice" ID="lblPreco" runat="server"><%# Eval("Preco") %></asp:Label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -154,7 +154,7 @@
                                             <!-- info pagamento -->
                                             <div class="order-info">
                                                 <label for="orderPagamento" class="order-info-label">Pagamento</label>
-                                                <asp:TextBox ID="orderPagamento" runat="server" placeholder="Selecione um meio de pagamento" ClientIDMode="Static"
+                                                <asp:TextBox ID="orderPagamento" runat="server" placeholder="Informe um meio de pagamento" ClientIDMode="Static"
                                                     TextMode="Email" required="" CssClass="order-input">
                                                 </asp:TextBox>
                                                 <%--<asp:ListBox ID="orderOpcoesPag" runat="server">
@@ -163,17 +163,17 @@
 
                                             <!-- info entrega -->
                                             <div class="order-info">
-                                                <label for="orderEntrega" class="order-info-label">Entrega</label>
+                                                <label for="orderEntrega" class="order-info-label">Obs</label>
                                                 <%--verificar se o produtor faz ou não entrega--%>
-                                                <asp:TextBox ID="orderEntrega" runat="server" placeholder="Selecione um meio de entrega" ClientIDMode="Static"
-                                                    TextMode="Email" required="" CssClass="order-input">
+                                                <asp:TextBox ID="orderEntrega" runat="server" placeholder="Alguma observação adicional?" ClientIDMode="Static"
+                                                    required="" CssClass="order-input">
                                                 </asp:TextBox>
                                                 <%--<asp:ListBox ID="orderOpcoesEntrega" runat="server">
                                      </asp:ListBox>--%>
                                             </div>
                                         </div>
                                         <!-- btn send order -->
-                                        <asp:LinkButton type="submit" ID="btnSendOrder" runat="server">Enviar pedido</asp:LinkButton>
+                                        <asp:LinkButton type="submit" ID="btnSendOrder" runat="server" OnClick="btnSendOrder_Click">Enviar pedido</asp:LinkButton>
 
                                     </div>
 
