@@ -230,9 +230,6 @@
                                 // Atualizar dinamicamente o número de itens na sacola
                                 var quantidadeItens = parseInt(document.querySelector(".qtd-itens").innerText);
                                 document.querySelector(".qtd-itens").innerText = quantidadeItens + 1;
-
-                                // Recarregar os produtos após a adição
-                                CarregarProdutos();
                             } else {
                                 // Lógica de erro
                             }
