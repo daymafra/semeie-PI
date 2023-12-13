@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web.UI.WebControls;
 
 public partial class MasterConsumidor : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+       // CarregarItensNaSacola();
         if (Session["USUARIO"] != null)
         {
             Usuario usuario = (Usuario)Session["USUARIO"];
@@ -40,5 +42,32 @@ public partial class MasterConsumidor : System.Web.UI.MasterPage
         // Lógica para obter os detalhes dos itens na sacola usando sessão
         List<ProdutoSistema> sacola = (List<ProdutoSistema>)Session["SacolaDeCompras"];
         return sacola ?? new List<ProdutoSistema>();
+    }
+
+    // Método para vincular dados ao Repeater
+    protected void CarregarItensNaSacola()
+    {
+        repeaterItens.DataSource = ObterDetalhesItensNaSacola();
+        repeaterItens.DataBind();
+    }
+
+    protected void repeaterItens_ItemCommand(object source, RepeaterCommandEventArgs e)
+    {
+        if (e.CommandName == "ExcluirItem")
+        {
+            int indice = e.Item.ItemIndex;
+
+            // Obter a lista de itens da sessão
+            List<ProdutoSistema> sacola = ObterDetalhesItensNaSacola();
+
+            // Remover o item da lista com base no índice
+            sacola.RemoveAt(indice);
+
+            // Atualizar a sessão com a nova lista
+            Session["SacolaDeCompras"] = sacola;
+
+            // Recarregar o Repeater para refletir as alterações
+            CarregarItensNaSacola();
+        }
     }
 }
