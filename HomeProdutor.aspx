@@ -16,7 +16,7 @@
                 <!-- info text -->
                 <div class="info-seller-text">
                     <div class="info-top">
-                        <span id="sellerName" runat="server"> </span>
+                        <span id="sellerName" runat="server"></span>
                         <span id="sellerLocal">Cunha, SP</span>
                     </div>
                     <div class="info-bottom">
@@ -167,27 +167,29 @@
                     Você ainda não tem nenhum pedido
                 </div>
                 <!-- card order 01 -->
-                <div class="order-card">
-                    <div class="order-status">
-                        <div id="statusMsg"></div>
-                        <div id="statusIcon"></div>
-                    </div>
-                    <div class="order-info-top">
-                        <span id="orderId">#0033</span>
-                        <p>de <span>@username</span></p>
-                    </div>
-
-                    <div class="order-num-itens">
-                        <p><span>3</span> produtos</p>
-                    </div>
-
-                    <div class="order-total">
-                        <p>Total</p>
-                        <span id="">R$36,50</span>
-                    </div>
-                    
-                    <button type="button" id="verOrderDetails">Ver detalhes</button>
-                </div>
+                <!-- Container para exibir os cartões de pedidos -->
+                <asp:Repeater ID="pedidosRepeater" runat="server">
+                    <ItemTemplate>
+                        <div class="order-card">
+                            <div class="order-status">
+                                <div id="statusMsg"></div>
+                                <div id="statusIcon"></div>
+                            </div>
+                            <div class="order-info-top">
+                                <span id="orderId"><%# Eval("car_id") %></span>
+                                <p>de <span><%# Eval("car_nomeCliente") %></span></p>
+                            </div>
+                            <div class="order-num-itens">
+                                <p><span><%# Eval("car_qtdProduto") %></span> produtos</p>
+                            </div>
+                            <div class="order-total">
+                                <p>Total</p>
+                                <span id="">R$<%# Eval("car_valorTotal") %></span>
+                            </div>
+                            <button type="button" id="verOrderDetails">Ver detalhes</button>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
             </div>
         </section>
 

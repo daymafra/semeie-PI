@@ -123,9 +123,11 @@ public partial class MasterConsumidor : System.Web.UI.MasterPage
 
         foreach (var produto in detalhesSacola)
         {
+            Usuario usuario = (Usuario)Session["USUARIO"];
+            string nomeCliente = usuario.Email;
             // Usa os detalhes do produto para inserção no banco de dados
-            string query = "INSERT INTO car_carrinho(car_nomeProduto, car_qtdProduto, car_descricaoPedido, car_pagamento, car_valorTotal, con_id) " +
-                           $"VALUES('{produto.Nome}', '{produto.Quantidade}', '{orderDesc.Text}', '{orderPagamento.Text}', '{produto.Preco}', '{idConsumidor}')";
+            string query = "INSERT INTO car_carrinho(car_nomeCliente, car_nomeProduto, car_qtdProduto, car_descricaoPedido, car_pagamento, car_valorTotal, con_id) " +
+                           $"VALUES('{nomeCliente}', '{produto.Nome}', '{produto.Quantidade}', '{orderDesc.Text}', '{orderPagamento.Text}', '{produto.Preco}', '{idConsumidor}')";
 
             // Executa a consulta aqui
             IDbConnection con = MapeamentoBD.Conexao();
